@@ -1,0 +1,25 @@
+[package]
+name = "blockchain_mac"
+version = "0.1.0"
+edition = "2023_11"
+
+[dependencies]
+alexandria_math = { git = "https://github.com/keep-starknet-strange/alexandria.git" }
+pragma_lib = { git = "https://github.com/astraly-labs/pragma-lib" }
+openzeppelin = { git = "https://github.com/OpenZeppelin/cairo-contracts.git", tag = "v0.9.0" }
+
+starknet = "2.4.0"
+
+
+[[target.starknet-contract]]
+
+# Enable Sierra codegen.
+sierra = true
+
+# Enable CASM codegen.
+casm = true
+
+# Emit Python-powered hints in order to run compiled CASM class with legacy Cairo VM.
+casm-add-pythonic-hints = true
+
+allowed-libfuncs-list.name = "audited"
